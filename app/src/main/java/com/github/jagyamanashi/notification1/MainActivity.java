@@ -1,7 +1,11 @@
 package com.github.jagyamanashi.notification1;
 
 import android.app.Activity;
+import android.app.PendingIntent;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationManagerCompat;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -24,7 +28,7 @@ public class MainActivity extends Activity {
             public void onClick(View view) {
                 Log.i(TAG, "Button clicked.");
 
-
+                myFunc();
             }
         });
     }
@@ -46,5 +50,27 @@ public class MainActivity extends Activity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void myFunc() {
+        int notificationId = 001;
+        String eventTitle = "Event Title";
+        String eventLocation = "Event Location";
+
+        Intent viewIntent = new Intent(this, MainActivity.class);
+        PendingIntent viewPendingIntent =
+                PendingIntent.getActivity(this, 0, viewIntent, 0);
+
+        NotificationCompat.Builder notificationBuilder =
+                new NotificationCompat.Builder(this)
+                .setSmallIcon(R.drawable.ic_launcher)
+                .setContentTitle(eventTitle)
+                .setContentText(eventLocation)
+                .setContentIntent(viewPendingIntent);
+
+        NotificationManagerCompat notificationManager =
+                NotificationManagerCompat.from(this);
+
+        notificationManager.notify(notificationId, notificationBuilder.build());
     }
 }
