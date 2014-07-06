@@ -28,7 +28,7 @@ public class MainActivity extends Activity {
             public void onClick(View view) {
                 Log.i(TAG, "Button clicked.");
 
-                myFunc();
+                showNotification();
             }
         });
     }
@@ -52,7 +52,7 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void myFunc() {
+    private void showNotification() {
         int notificationId = 001;
         String eventTitle = "Event Title";
         String eventLocation = "Event Location";
@@ -63,7 +63,7 @@ public class MainActivity extends Activity {
 
         NotificationCompat.Builder notificationBuilder =
                 new NotificationCompat.Builder(this)
-                .setSmallIcon(R.drawable.ic_launcher)
+                .setSmallIcon(R.drawable.ic_stat_smile)
                 .setContentTitle(eventTitle)
                 .setContentText(eventLocation)
                 .setContentIntent(viewPendingIntent);
