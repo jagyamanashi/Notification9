@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Notification 1</string>
+    <string name="app_name">Notification 9</string>
     <string name="hello_world">Hello world!</string>
+    <string name="reply_label">Reply</string>
     <string name="action_settings">Settings</string>
+    <string-array name="reply_choices">
+        <item>はい</item>
+        <item>いいえ</item>
+        <item>たぶん</item>
+    </string-array>
 
 </resources>

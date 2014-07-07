@@ -5,7 +5,7 @@ android {
     buildToolsVersion '20.0.0'
 
     defaultConfig {
-        applicationId "com.github.jagyamanashi.notification1"
+        applicationId "com.github.jagyamanashi.notification9"
         minSdkVersion 14
         targetSdkVersion 20
         versionCode 1
